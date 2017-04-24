@@ -6,6 +6,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color:#fafaf5;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -20,6 +21,7 @@ body {
 .header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
+  
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -49,6 +51,8 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background: url('/images/vegetable.jpg');
+  background-size: cover;
 }
 .jumbotron .btn {
   padding: 14px 24px;
@@ -63,6 +67,13 @@ body {
   margin-top: 28px;
 }
 
+.text-title {
+  color: #8bad00;
+}
+
+.lead {
+  color: white;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
