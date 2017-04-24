@@ -1,10 +1,12 @@
 # COOKPAD WEB TEST
 
-* Ruby version: ruby 2.2.1p85
+* Ruby version: Ruby 2.2.1p85
 
-* Rails version: rails 4.2.6
+* Rails version: Rails 4.2.6
 
-* Used gems: devise, paperclip, simple_form
+* Used gems: devise, paperclip, simple_form, therubyracer ...
+
+* Demo: [52.78.0.229:3000](http://52.78.0.229:3000)
 
 ## Requirements
 
@@ -28,4 +30,4 @@ If tou are on Centos, you'll want to run the following with yum:
 <pre><code>rake db:migrate</code></pre>
 <pre><code>rails s</code></pre>
 
-Please go to localhost:3000 through web browser
+Check localhost:3000 through your web browser
