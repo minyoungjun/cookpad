@@ -8,9 +8,11 @@
 
 ## Requirements
 
-###Ruby on Rails
+### Ruby on Rails
 
-###ImageMagick
+<pre>Please install Ruby on Rails on your Computer.</pre>
+
+### ImageMagick
 
 <pre>If you're on Mac OS X, you'll want to run the following with [Homebrew]</pre>
 <pre><code>brew install imagemagick</code></pre>
@@ -20,6 +22,7 @@
 <pre>If tou are on Centos, you'll want to run the following with yum:</pre>
 <pre><code>sudo yum install ImageMagick ImageMagick-devel</code></pre>
 
+### Bundle, Migrate, Run
 
 <pre><tt>bundle install</tt></pre>
 <pre><tt>rake db:migrate</tt></pre>
