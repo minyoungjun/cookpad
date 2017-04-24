@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #
   root 'blogs#index'
   get "blogs/profile"
-  post "blogs/update_profile"
+  patch "blogs/update_profile"
   get "blogs/delete_profile"
 
   # Example of regular route:

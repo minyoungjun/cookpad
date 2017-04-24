@@ -4,7 +4,7 @@
 
 * Rails version: rails 4.2.6
 
-* Used gems: devise, paperclip
+* Used gems: devise, paperclip, simple_form
 
 ## Requirements
 

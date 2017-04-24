@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <h2>Upload profile image</h2>
+  <img src="<%=current_user.profile.url(:medium)%>" style="width: 200px;"/>
+  <%if @user.profile.present?%>
+    <a href="/blogs/delete_profile" class="btn btn-danger">Delete profile image</a>
+  <%end%>
+  <%= simple_form_for @user, url: "/blogs/update_profile" do |form| %>
+    <%= form.input :profile, as: :file %>
+    <br>
+    <%if @user.profile.present?%>
+      <%= form.submit 'Update profile image', class: "btn btn-warning"%>
+    <%else%>
+      <%= form.submit 'Upload profile image', class: "btn btn-success"%>
+    <%end%>
+  <% end %>
+  <br><br>
+</div>
