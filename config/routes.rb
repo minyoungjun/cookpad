@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   #
   root 'blogs#index'
+  get "blogs/profile"
+  post "blogs/update_profile"
+  get "blogs/delete_profile"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
