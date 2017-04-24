@@ -1,4 +1,4 @@
-== COOKPAD WEB TEST
+# COOKPAD WEB TEST
 
 * Ruby version: ruby 2.2.1p85
 
@@ -10,7 +10,7 @@
 
 ### Ruby on Rails
 
-<pre>Please install Ruby on Rails on your Computer.</pre>
+Please install Ruby on Rails on your Computer.
 
 ### ImageMagick
 
