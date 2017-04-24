@@ -37,6 +37,37 @@ class BlogsController < ApplicationController
 
   end
 
+  def delete
+
+    post = Post.where(:user_id => current_user.id, :id => params[:id]).first
+    post.delete
+    
+    redirect_to :action => "feeds"
+
+  end
+
+
+  def comment
+
+    comment = Comment.new
+    comment.user_id = current_user.id
+    comment.content = params[:content]
+    comment.post_id = params[:id]
+    comment.save
+    
+    redirect_to :action => "feeds"
+
+  end
+
+  def delete_comment
+
+    comment = Comment.where(:user_id => current_user.id, :id => params[:id]).first
+    comment.delete
+    
+    redirect_to :action => "feeds"
+
+  end
+
   private
 
   def user_params

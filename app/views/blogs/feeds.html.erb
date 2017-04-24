@@ -1,29 +1,45 @@
 <div class="col-md-12">
   <div class="col-md-12">
-
-    <h3>Upload new post</h3>
-    <form action="/blogs/create" method="post" enctype="multipart/form-data">
-
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type="file" name="photo">
-      <br>
-      <textarea name="content" class="form-control" placeholder="Describe about your photo."></textarea>
-      <br>
-      <input type="submit" value="New Post" class="btn btn-success">
-    </form>
-    <hr>
-    <div class="col-m">
+    <%if user_signed_in?%>
+      <h3>Upload new post</h3>
+      <form action="/blogs/create" method="post" enctype="multipart/form-data">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="file" name="photo">
+        <br>
+        <textarea name="content" class="form-control" placeholder="Describe about your photo."></textarea>
+        <br>
+        <input type="submit" value="New Post" class="btn btn-success">
+      </form>
+      <hr>
+    <%end%>
   </div>
   <h2>News feeds</h2>
   <div id ="grid" data-columns>
     <%Post.all.reverse.each do |post|%>
       <div class="item">
-        <div style="padding:5px;">
-          <p><img src="<%=post.photo%>" style="width: 100%;"/></p>
-          <p style="color:#8bad00;"><img src="<%=post.user.profile.url("thumb")%>" style="width:40px; border-radius: 20px; margin-right: 7px; "><%=post.user.email%></p>
-          <p><%=post.content%></p>
-          <input type="text" class="form-control" placeholder="Add comments...">
-          <input type="submit" class="btn btn-xs btn-info" value="Send" style="margin-top: 10px;">
+        <div class="item-1" >
+          <div class="item-2">
+            <p><img src="<%=post.photo%>" /></p>
+            <div class="item-3">
+              <p><img src="<%=post.user.profile.url("thumb")%>"></p>
+              <p style="color:#8bad00;"><%=post.user.email%></p>
+              <p class="content"><%=post.content%><%if user_signed_in? && current_user == post.user%><br><a href="/blogs/delete/<%=post.id%>" class="btn btn-xs btn-warning">Delete Post</a><%end%></p>
+              <%post.comments.each do |comment|%>
+                <div class="comment">
+                  <p><img src="<%=comment.user.profile.url(:thumb)%>">
+                    <%=comment.content%><%if user_signed_in? && current_user == comment.user%><a href="/blogs/delete_comment/<%=comment.id%>" class="btn btn-xs btn-danger">Delete</a><%end%></p>
+                </div>
+              <%end%>
+              <%if user_signed_in?%>
+                <form action="/blogs/comment" class="comment" method="post">
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <input type="hidden" name="id" value="<%=post.id%>">
+                  <input type="text" class="form-control" placeholder="Add comments..." name="content">
+                  <input type="submit" class="btn btn-sm btn-info" value="Send">
+                </form>
+              <%end%>
+            </div>
+          </div>
         </div>
       </div>
     <%end%>

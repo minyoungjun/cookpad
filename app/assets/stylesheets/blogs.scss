@@ -102,7 +102,55 @@ a:hover {
 
 /* These are the classes that are going to be applied: */
 .column { float: left; }
+
 .size-1of3 { width: 33.333%; }
+
+.item-1 {
+  padding:5px;
+}
+
+.item-2{
+  box-shadow:0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.item-2 > p > img {
+  width : 100%;
+}
+.item-3 {
+margin-top: -40px; background-color: white; padding: 10px;
+}
+
+.item-3 p {
+  text-align:center;
+}
+.item-3>.content {
+  text-align:left;
+}
+.item-3 img {
+  width:40px; border-radius: 20px;
+}
+
+.comment .btn {
+  margin-top: 10px;
+}
+.comment {
+  text-align:left;
+}
+.comment p {
+  color: #bbb;
+  text-align: left;
+}
+.comment img {
+  width: 20px;
+  margin-right:3px;
+}
+.comment .btn-xs {
+  margin-left: 5px;
+}
+
+.content .btn-xs {
+  margin-top: 3px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

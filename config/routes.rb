@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   get "blogs/feeds"
   post "blogs/create"
+  post "blogs/comment"
+
+  get "blogs/delete/:id" => "blogs#delete"
+
+  get "blogs/delete_comment/:id" => "blogs#delete_comment"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
