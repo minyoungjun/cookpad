@@ -14,18 +14,18 @@
 
 ### ImageMagick
 
-<pre>If you're on Mac OS X, you'll want to run the following with [Homebrew]</pre>
+If you're on Mac OS X, you'll want to run the following with [Homebrew]
 <pre><code>brew install imagemagick</code></pre>
-<pre>If you are on Ubuntu (or any Debian base Linux distribution), you'll want to run the following with apt-get:</pre>
+If you are on Ubuntu (or any Debian base Linux distribution), you'll want to run the following with apt-get:
 <pre><code>sudo apt-get install imagemagick -y</code></pre>
 
-<pre>If tou are on Centos, you'll want to run the following with yum:</pre>
+If tou are on Centos, you'll want to run the following with yum:
 <pre><code>sudo yum install ImageMagick ImageMagick-devel</code></pre>
 
 ### Bundle, Migrate, Run
 
-<pre><tt>bundle install</tt></pre>
-<pre><tt>rake db:migrate</tt></pre>
-<pre><tt>rails s</tt></pre>
+<pre><code>bundle install</code></pre>
+<pre><code>rake db:migrate</code></pre>
+<pre><code>rails s</code></pre>
 
 Please go to localhost:3000 through web browser
