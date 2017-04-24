@@ -6,10 +6,28 @@
 
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type="file" name="photo">
-      <textarea name="content" class="form-control"></textarea>
-      <input type="submit" value="New Post">
+      <br>
+      <textarea name="content" class="form-control" placeholder="Describe about your photo."></textarea>
+      <br>
+      <input type="submit" value="New Post" class="btn btn-success">
     </form>
+    <hr>
+    <div class="col-m">
   </div>
-  <h2></h2>
+  <h2>News feeds</h2>
+  <div id ="grid" data-columns>
+    <%Post.all.reverse.each do |post|%>
+      <div class="item">
+        <div style="padding:5px;">
+          <p><img src="<%=post.photo%>" style="width: 100%;"/></p>
+          <p style="color:#8bad00;"><img src="<%=post.user.profile.url("thumb")%>" style="width:40px; border-radius: 20px; margin-right: 7px; "><%=post.user.email%></p>
+          <p><%=post.content%></p>
+          <input type="text" class="form-control" placeholder="Add comments...">
+          <input type="submit" class="btn btn-xs btn-info" value="Send" style="margin-top: 10px;">
+        </div>
+      </div>
+    <%end%>
+  </div>
 
+  <script src="/js/salvattore.min.js"></script>
 </div>

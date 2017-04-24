@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:profile, :update_profile, :delete_profile, :create]
+
   def profile
     @user = current_user
   end
@@ -20,6 +22,18 @@ class BlogsController < ApplicationController
     user.save
 
     redirect_to :action => "profile"
+
+  end
+
+  def create
+
+    post = Post.new
+    post.photo = params[:photo]
+    post.user_id = current_user.id
+    post.content = params[:content]
+    post.save
+
+    redirect_to :action => "feeds"
 
   end
 
