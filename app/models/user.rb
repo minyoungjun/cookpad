@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   has_attached_file :profile, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/no_profile.jpg"
   validates_attachment_content_type :profile, content_type: /\Aimage\/.*\z/
 
+  has_many  :posts
+  has_many  :comments
+
 end
